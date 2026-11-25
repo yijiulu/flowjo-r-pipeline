@@ -1,0 +1,25 @@
+# R / RStudio
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rcheck/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Raw experimental data & generated outputs
+data/
+results/
+outputs/
+*.fcs
+*.wsp
+*.png
+!docs/*.png
+*.pdf
+*.csv
+!examples/data/*.csv

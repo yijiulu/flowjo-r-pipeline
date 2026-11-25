@@ -2,15 +2,15 @@ name: CI
 
 on:
   push:
-    branches: [main, r-pipeline-public]
+    branches: [main]
   pull_request:
-    branches: [main, r-pipeline-public]
+    branches: [main]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
@@ -21,7 +21,7 @@ jobs:
         run: Rscript -e "install.packages(c('dplyr', 'tidyr', 'ggplot2', 'scales', 'testthat'))"
 
       - name: Run testthat suite
-        run: Rscript -e "testthat::test_dir('tests/testthat', stop_on_failure = TRUE)"
+        run: Rscript -e "res <- testthat::test_dir('tests/testthat', stop_on_failure = TRUE)"
 
       - name: Run synthetic end-to-end demo
         run: Rscript examples/generate_synthetic_demo.R --outdir /tmp/rla_ci_demo

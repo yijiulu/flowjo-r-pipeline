@@ -1,0 +1,17 @@
+Package: flowjoRpipeline
+Title: Modular FlowJo Time-Course and Dose-Response Cytometry Analysis
+Version: 0.1.0
+Authors@R: person("Yijiu", "Lu", role = c("aut", "cre"))
+Description: Modular R workflow for ingesting FlowJo exported summary tables, validating 96-well plate metadata, computing replicate SEM with quadrature error propagation, and generating layered ggplot2 figures.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends:
+    R (>= 4.1.0)
+Imports:
+    dplyr,
+    tidyr,
+    ggplot2,
+    scales,
+    stats
+Suggests:
+    testthat (>= 3.0.0)

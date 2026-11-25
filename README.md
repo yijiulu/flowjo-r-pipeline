@@ -1,5 +1,8 @@
 # FlowJo Time-Course and Dose-Response Cytometry Analysis (R)
 
+[![CI](https://github.com/yijiulu/flowjo-r-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/yijiulu/flowjo-r-pipeline/actions/workflows/ci.yml)
+[![Licence: MIT](https://img.shields.io/badge/Licence-MIT-blue.svg)](LICENSE)
+
 Modular R pipeline for ingesting FlowJo exported summary tables, joining plate-layout metadata, computing replicate statistics with error-propagated baseline subtraction, and generating publication-ready `ggplot2` figures for microbial fluorescence assays.
 
 > **Data note**: Unpublished experimental measurements and internal construct identifiers are excluded from this repository. A self-contained synthetic data generator is provided under `examples/` so the entire workflow can be verified out of the box.
@@ -8,6 +11,8 @@ Modular R pipeline for ingesting FlowJo exported summary tables, joining plate-l
 
 ```text
 .
+├── .github/workflows/ci.yml      # Automated R testthat & synthetic demo CI
+├── DESCRIPTION                   # Standard R dependency declaration
 ├── R/
 │   ├── io.R                      # FlowJo CSV ingestion, well validation, metadata joins
 │   ├── stats.R                   # Unbiased sample SEM & baseline-corrected error propagation
@@ -49,6 +54,8 @@ Generated out of the box via `Rscript examples/generate_synthetic_demo.R`:
 
 ```r
 install.packages(c("dplyr", "tidyr", "ggplot2", "scales", "testthat"))
+# Or install directly from DESCRIPTION:
+# remotes::install_deps(dependencies = TRUE)
 ```
 
 ## Quick Start (Synthetic Demo)
